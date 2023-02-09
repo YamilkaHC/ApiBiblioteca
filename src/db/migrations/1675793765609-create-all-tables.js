@@ -1,5 +1,6 @@
 exports.up = function(knex) {
-    return knex.schema.createTable("book", (table) => {
+    return knex.schema.withSchema('public')
+        .createTable("book", (table) => {
             table.increments("id").primary();
             table.string("title").notNullable();
             table.string("author").notNullable();
@@ -14,10 +15,11 @@ exports.up = function(knex) {
             table.integer("book_id").unsigned().notNullable();
             table.foreign("book_id").references("book.id");
             table.text("content").notNullable();
+            table.text("html_content").notNullable();
         })
 };
 
 exports.down = function(knex) {
-    return knex.schema.dropTable("page")
+    return knex.schema.withSchema('public').dropTable("page")
         .dropTable("book")
 };

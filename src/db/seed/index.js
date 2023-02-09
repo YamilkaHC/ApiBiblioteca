@@ -1,7 +1,10 @@
 const clientBD = require('../connection')
-const AppSeeders = require('./appSeeder')
+const bookSeed = require('./book/index')
+const pagesSeed = require("./page/index")
 
 clientBD.connect(function(err) {
     if (err) throw err;
-    new AppSeeders().run()
+
+    bookSeed(clientBD)
+    pagesSeed(clientBD)
 });

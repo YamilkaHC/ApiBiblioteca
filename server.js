@@ -3,6 +3,7 @@ const routes = require('./src/routes')
 const config = require('./config')
 const clientBD = require('./src/db/connection')
 
+
 const server = http.createServer((req, res) => {
     if (req.url.includes("/api")) {
         routes(req, res)

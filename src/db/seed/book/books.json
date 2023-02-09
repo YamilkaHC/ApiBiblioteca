@@ -1,0 +1,59 @@
+{
+    "books": [{
+            "title": "The Very Hungry Caterpillar",
+            "author": "Eric Carle",
+            "date": "1969-06-03",
+            "name": "The Very Hungry Caterpillar",
+            "total_pages": 24,
+            "synopsis": "The Very Hungry Caterpillar is a children's picture book by Eric Carle. The story follows the journey of a hungry caterpillar as it eats its way through various foods and transforms into a beautiful butterfly."
+        },
+        {
+            "title": "Where the Wild Things Are",
+            "author": "Maurice Sendak",
+            "date": "1963-10-01",
+            "name": "Where the Wild Things Are",
+            "total_pages": 48,
+            "synopsis": "Where the Wild Things Are is a children's picture book by Maurice Sendak. The story follows the adventures of a young boy named Max as he travels to a land of wild creatures and becomes their king."
+        },
+        {
+            "title": "Green Eggs and Ham",
+            "author": "Dr. Seuss",
+            "date": "1960-08-12",
+            "name": "Green Eggs and Ham",
+            "total_pages": 72,
+            "synopsis": "Green Eggs and Ham is a children's book by Dr. Seuss. The story features a persistent character who tries to convince a hesitant friend to try green eggs and ham."
+        },
+        {
+            "title": "The Giving Tree",
+            "author": "Shel Silverstein",
+            "date": "1964-09-01",
+            "name": "The Giving Tree",
+            "total_pages": 64,
+            "synopsis": "The Giving Tree is a children's picture book by Shel Silverstein. The story follows the relationship between a tree and a boy, and the tree's selfless giving of itself to the boy over the years."
+        },
+        {
+            "title": "Goodnight Moon",
+            "author": "Margaret Wise Brown",
+            "date": "1947-09-01",
+            "name": "Goodnight Moon",
+            "total_pages": 32,
+            "synopsis": "Goodnight Moon is a children's picture book by Margaret Wise Brown. The book features a series of goodnight wishes for familiar objects and goodnight greetings for people and animals."
+        },
+        {
+            "title": "The Little Engine That Could",
+            "author": "Watty Piper",
+            "date": "1930-01-01",
+            "name": "The Little Engine That Could",
+            "total_pages": 32,
+            "synopsis": "The Little Engine That Could is a children's picture book by Watty Piper. The story follows a little engine that overcomes obstacles and learns to believe in itself."
+        },
+        {
+            "title": "Oh, the Places You'll Go!",
+            "author": "Dr. Seuss",
+            "date": "1990-01-22",
+            "name": "Oh, the Places You'll Go!",
+            "total_pages": 56,
+            "synopsis": "Oh, the Places You'll Go! is a children's book by Dr. Seuss. The story offers encouragement and inspiration for life's journey, encouraging readers to embrace challenges and opportunities."
+        }
+    ]
+}
