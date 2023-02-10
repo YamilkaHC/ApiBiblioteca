@@ -5,10 +5,10 @@ const clientBD = require('./src/db/connection')
 
 
 const server = http.createServer((req, res) => {
+
     if (req.url.includes("/api")) {
         routes(req, res)
-    }
-    if (req.url === "/") {
+    } else if (req.url === "/") {
         res.writeHead(200, {
             'Content-Type': "text/plain"
         })

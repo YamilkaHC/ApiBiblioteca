@@ -1,25 +1,35 @@
 const booksController = require("../controller/books")
 const pageByBookController = require("../controller/pageByBook")
 const oneBookController = require("../controller/oneBook")
-
+const url = require('url');
+const httpVerbs = require('../helper/httpVerbs.helper')
+const noFound = require('../helper/404')
 
 const routes = (req, res) => {
 
-    //GET ENDPOINTS
-    if (req.method === "GET") {
+    const path = url.parse(req.url, true).pathname;
+    const method = req.method;
 
-        let parts = req.url.replace("/api", "").split('/');
-        console.log(req.url);
-        if (req.url === "/api/books" && parts.length === 2) {
-            booksController(req, res)
-        } else if (req.url.includes("/book/") && parts.length === 3 && !isNaN(Number(parts[2]))) {
-            oneBookController(req, res)
-        } else if (req.url.includes("/book/") && parts.length === 5 && !isNaN(Number(parts[4]))) {
-            pageByBookController(req, res)
-        } else {
-            res.writeHead(404, { 'Content-Type': "text/plain" })
-        }
+
+    switch (path) {
+
+        case '/api/book':
+            httpVerbs({ GET: booksController }, method)(req, res)
+            break;
+
+        case '/api/book/:id':
+            httpVerbs({ GET: oneBookController }, method)(req, res)
+            break;
+
+        case '/api/book/:id-book/page/:id-page':
+            httpVerbs({ GET: pageByBookController }, method)(req, res)
+            break;
+
+        default:
+            noFound(req, res)
+            break;
     }
+
 
 }
 
