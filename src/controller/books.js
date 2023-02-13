@@ -1,18 +1,21 @@
-const booksController = (req, res) => {
+const url = require('url');
+const serviceBook = require('../services/book.service');
 
-    console.log("hello word");
+const booksController = async (req, res) => {
 
-    // console.log('✨✨✨', req.params.take)
-
-
-    // var page = req.params
-    // var limit = req.params.limit ? req.params.limit : 10;
-    // try {
-    //     var users = await UserService.getUsers({}, page, limit)
-    //     return res.status(200).json({ status: 200, data: users, message: "Succesfully Users Retrieved" });
-    // } catch (e) {
-    //     return res.status(400).json({ status: 400, message: e.message });
-    // }
+    const query = url.parse(req.url, true).query;
+    let limit = query?.limit || null
+    let offset = query?.offset || null
+    try {
+        var books = await serviceBook({ limit, offset })
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(books));
+        return
+    } catch (e) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(e.message));
+        return
+    }
 
 
 }

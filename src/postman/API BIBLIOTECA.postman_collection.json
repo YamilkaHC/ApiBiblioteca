@@ -1,9 +1,8 @@
 {
 	"info": {
-		"_postman_id": "593af799-a822-43d7-a0ad-c9af1b6dd9a6",
+		"_postman_id": "95d3ead4-39ab-45d5-afd0-4a1bbbbcc331",
 		"name": "API BIBLIOTECA",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "16595943"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
@@ -12,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/api/book?take=3&skip=0",
+					"raw": "{{url}}/api/book?limit=1&offset=0",
 					"host": [
 						"{{url}}"
 					],
@@ -22,11 +21,11 @@
 					],
 					"query": [
 						{
-							"key": "take",
-							"value": "3"
+							"key": "limit",
+							"value": "1"
 						},
 						{
-							"key": "skip",
+							"key": "offset",
 							"value": "0"
 						}
 					]
@@ -39,17 +38,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "{{url}}/api/book/1",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"api",
-						"book",
-						"1"
-					]
-				}
+				"url": "{{url}}/api/book/1"
 			},
 			"response": []
 		},
@@ -58,19 +47,25 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "{{url}}/api/book/1/page/1",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"api",
-						"book",
-						"1",
-						"page",
-						"1"
-					]
-				}
+				"url": "{{url}}/api/book/1/page/1"
+			},
+			"response": []
+		},
+		{
+			"name": "get-one-page-html",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/api/book/1/page/1/html"
+			},
+			"response": []
+		},
+		{
+			"name": "get-one-page-text",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/api/book/1/page/1/text"
 			},
 			"response": []
 		}
